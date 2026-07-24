@@ -62,8 +62,7 @@ servidor local seja recomendado.
 ```text
 .
 ├── assets/                                      # Fotografias otimizadas em WebP
-├── Cataguases entre luz, modernismo e patrimônio.pdf
-├── dep-historia-cataguases.md                   # Pesquisa histórica e referências
+├── .gitignore                                   # Arquivos mantidos fora do Git
 ├── index.html                                   # Conteúdo e estrutura semântica
 ├── script.js                                    # Interações e dados da experiência
 └── styles.css                                   # Design system e responsividade
