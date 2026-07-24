@@ -62,8 +62,7 @@ servidor local seja recomendado.
 ```text
 .
 ├── assets/                                      # Fotografias otimizadas em WebP
-├── Cataguases entre luz, modernismo e patrimônio.pdf
-├── dep-historia-cataguases.md                   # Pesquisa histórica e referências
+├── .gitignore                                   # Arquivos mantidos fora do Git
 ├── index.html                                   # Conteúdo e estrutura semântica
 ├── script.js                                    # Interações e dados da experiência
 └── styles.css                                   # Design system e responsividade
@@ -107,8 +106,8 @@ Entre as referências centrais estão:
 - [Vitruvius: Patrimônio modernista em Cataguases][source-vitruvius]
 - [Biblioteca Brasiliana Guita e José Mindlin: Revista Verde][source-verde]
 
-Consulte `dep-historia-cataguases.md` e o PDF disponível na raiz para a pesquisa
-completa, as referências e as incertezas documentais identificadas.
+Consulte a seção de fontes do website para acessar referências públicas e as
+incertezas documentais identificadas durante a pesquisa.
 
 ## Imagens
 
