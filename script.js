@@ -106,11 +106,19 @@ document.querySelectorAll("#luz, #industria, #cultura, #patrimonio, #presente").
 const nightScene = document.querySelector("[data-night-scene]");
 const lightSwitch = nightScene.querySelector(".switch");
 const sceneStatus = nightScene.querySelector(".scene-status");
+const routeState = nightScene.querySelector(".route-state");
+const routeGuide = document.querySelector("[data-route-guide]");
 lightSwitch.addEventListener("click", () => {
   const lit = nightScene.classList.toggle("is-lit");
   lightSwitch.setAttribute("aria-pressed", String(lit));
   lightSwitch.querySelector("strong").textContent = lit ? "Apagar Cataguases" : "Acender Cataguases";
-  sceneStatus.textContent = lit ? "A luz elétrica ilumina a cidade." : "A cidade volta à noite anterior à eletricidade.";
+  routeState.textContent = lit ? "Rota acesa · Descubra abaixo ↓" : "Acenda a cidade para ativar a rota";
+  routeGuide.classList.toggle("is-active", lit);
+  routeGuide.setAttribute("aria-hidden", String(!lit));
+  routeGuide.inert = !lit;
+  sceneStatus.textContent = lit
+    ? "Cataguases está acesa. A Rota Luz de Minas foi revelada com Cataguases, Leopoldina e seu distrito Piacatuba, e Itamarati de Minas."
+    : "A cidade volta à noite anterior à eletricidade e a rota é apagada.";
 });
 
 const timeline = document.querySelector(".timeline");
