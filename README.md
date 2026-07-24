@@ -106,9 +106,6 @@ Entre as referências centrais estão:
 - [Vitruvius: Patrimônio modernista em Cataguases][source-vitruvius]
 - [Biblioteca Brasiliana Guita e José Mindlin: Revista Verde][source-verde]
 
-Consulte a seção de fontes do website para acessar referências públicas e as
-incertezas documentais identificadas durante a pesquisa.
-
 ## Imagens
 
 As fotografias foram obtidas no Wikimedia Commons e mantêm suas respectivas
