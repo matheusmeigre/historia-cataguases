@@ -49,17 +49,30 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("cataguases-theme", nextTheme);
 });
 
-menuButton.addEventListener("click", () => {
-  const open = body.classList.toggle("menu-open");
+function setMenu(open, returnFocus = true) {
+  body.classList.toggle("menu-open", open);
   menuButton.setAttribute("aria-expanded", String(open));
   menuButton.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
-});
+  if (open) {
+    window.setTimeout(() => {
+      if (body.classList.contains("menu-open")) navLinks[0].focus();
+    }, 420);
+  } else if (returnFocus) {
+    menuButton.focus();
+  }
+}
+
+menuButton.addEventListener("click", () => setMenu(!body.classList.contains("menu-open")));
 
 navLinks.forEach(link => link.addEventListener("click", () => {
-  body.classList.remove("menu-open");
-  menuButton.setAttribute("aria-expanded", "false");
-  menuButton.setAttribute("aria-label", "Abrir menu");
+  setMenu(false, false);
 }));
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape" && body.classList.contains("menu-open")) {
+    setMenu(false);
+  }
+});
 
 function updateScrollUI() {
   const scrollable = document.documentElement.scrollHeight - window.innerHeight;
