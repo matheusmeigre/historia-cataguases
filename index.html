@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=08a1a99">
-  <script src="script.js?v=08a1a99" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260724">
+  <script src="script.js?v=20260724" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
@@ -185,19 +185,75 @@
 
       <section class="network section reveal" aria-labelledby="network-title">
         <div class="network-copy"><p class="eyebrow light-text">Julho de 1908</p><h3 id="network-title">A luz não parou<br>nos limites da cidade.</h3><p>A rede inaugurou um modelo regional de distribuição e alcançou quatro cidades no mesmo mês.</p></div>
-        <div class="network-map">
-          <svg viewBox="0 0 640 440" role="img" aria-labelledby="map-title map-desc">
-            <title id="map-title">Rede elétrica regional em julho de 1908</title>
-            <desc id="map-desc">Linhas partem da Usina Maurício para Cataguases, São João Nepomuceno, Leopoldina e Rio Novo.</desc>
-            <path class="river" d="M32 385C138 290 162 356 252 254S399 256 445 168 533 72 614 57"/>
-            <g class="lines"><path d="M265 249 161 139"/><path d="M265 249 481 120"/><path d="M265 249 497 306"/><path d="M265 249 168 340"/></g>
-            <g class="map-node central" transform="translate(265 249)"><circle r="12"/><circle r="25"/><text y="-38">Usina Maurício</text><text y="-23" class="map-date">800 kW</text></g>
-            <g class="map-node" transform="translate(161 139)"><circle r="9"/><text x="-22" y="-20">Cataguases</text><text x="-22" y="-6" class="map-date">03 JUL</text></g>
-            <g class="map-node" transform="translate(481 120)"><circle r="9"/><text x="18" y="-8">São João Nepomuceno</text><text x="18" y="8" class="map-date">07 JUL</text></g>
-            <g class="map-node" transform="translate(497 306)"><circle r="9"/><text x="18" y="-8">Leopoldina</text><text x="18" y="8" class="map-date">16 JUL</text></g>
-            <g class="map-node" transform="translate(168 340)"><circle r="9"/><text x="-18" y="30">Rio Novo</text><text x="-18" y="45" class="map-date">23 JUL</text></g>
-          </svg>
-        </div>
+        <figure class="network-map" data-network-map data-active="mauricio">
+          <figcaption class="network-map-toolbar">
+            <div><span>Rede intermunicipal · 1908</span><strong>Energia em trânsito</strong></div>
+            <p id="network-map-instruction">Selecione um ponto luminoso para percorrer a expansão.</p>
+            <span class="network-live"><i aria-hidden="true"></i> Rede energizada</span>
+          </figcaption>
+
+          <div class="network-canvas" role="group" aria-label="Pontos da rede elétrica regional" aria-describedby="network-map-instruction">
+            <svg viewBox="0 0 720 500" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <defs>
+                <pattern id="network-grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32"/></pattern>
+                <linearGradient id="river-light" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#2d617c"/><stop offset=".5" stop-color="#6ca0b5"/><stop offset="1" stop-color="#2d617c"/></linearGradient>
+                <radialGradient id="source-light"><stop offset="0" stop-color="#f0bc35" stop-opacity=".32"/><stop offset="1" stop-color="#f0bc35" stop-opacity="0"/></radialGradient>
+              </defs>
+              <rect class="network-grid" width="720" height="500" fill="url(#network-grid)"/>
+              <circle class="network-source-light" cx="300" cy="260" r="150" fill="url(#source-light)"/>
+              <path class="river" d="M28 435C137 327 187 396 273 284S432 291 487 189 594 73 692 52"/>
+              <path class="river-current" d="M28 435C137 327 187 396 273 284S432 291 487 189 594 73 692 52"/>
+              <g class="network-route-base">
+                <path d="M300 260C260 235 222 181 180 135"/>
+                <path d="M300 260C389 226 472 165 565 118"/>
+                <path d="M300 260C390 277 478 315 575 340"/>
+                <path d="M300 260C255 295 217 340 175 380"/>
+              </g>
+              <g class="network-routes">
+                <path class="network-line" data-route="cataguases" pathLength="1" d="M300 260C260 235 222 181 180 135"/>
+                <path class="network-line" data-route="sao-joao" pathLength="1" d="M300 260C389 226 472 165 565 118"/>
+                <path class="network-line" data-route="leopoldina" pathLength="1" d="M300 260C390 277 478 315 575 340"/>
+                <path class="network-line" data-route="rio-novo" pathLength="1" d="M300 260C255 295 217 340 175 380"/>
+              </g>
+              <g class="network-contours">
+                <path d="M54 92C143 25 240 34 318 72"/><path d="M455 430C535 391 633 397 695 445"/>
+              </g>
+              <g class="network-compass" transform="translate(674 438)"><path d="M0 30V0l-5 8M0 0l5 8"/><text x="0" y="44">N</text></g>
+            </svg>
+
+            <button class="network-node network-node-central" type="button" data-network-stop="mauricio" aria-pressed="true" aria-label="Usina Maurício, origem da rede, 800 quilowatts">
+              <span class="network-node-marker" aria-hidden="true"></span><span class="network-node-copy"><strong>Usina Maurício</strong><small>800 kW · origem</small></span>
+            </button>
+            <button class="network-node" type="button" data-network-stop="cataguases" aria-pressed="false" aria-label="Cataguases, eletrificada em 3 de julho de 1908">
+              <span class="network-node-marker" aria-hidden="true"></span><span class="network-node-copy"><strong>Cataguases</strong><small>03 JUL</small></span>
+            </button>
+            <button class="network-node network-node-label-left" type="button" data-network-stop="sao-joao" aria-pressed="false" aria-label="São João Nepomuceno, eletrificada em 7 de julho de 1908">
+              <span class="network-node-marker" aria-hidden="true"></span><span class="network-node-copy"><strong>São João Nepomuceno</strong><small>07 JUL</small></span>
+            </button>
+            <button class="network-node network-node-label-left" type="button" data-network-stop="leopoldina" aria-pressed="false" aria-label="Leopoldina, eletrificada em 16 de julho de 1908">
+              <span class="network-node-marker" aria-hidden="true"></span><span class="network-node-copy"><strong>Leopoldina</strong><small>16 JUL</small></span>
+            </button>
+            <button class="network-node" type="button" data-network-stop="rio-novo" aria-pressed="false" aria-label="Rio Novo, eletrificada em 23 de julho de 1908">
+              <span class="network-node-marker" aria-hidden="true"></span><span class="network-node-copy"><strong>Rio Novo</strong><small>23 JUL</small></span>
+            </button>
+          </div>
+
+          <div class="network-detail">
+            <div class="network-detail-copy" aria-live="polite" aria-atomic="true">
+              <span class="network-detail-index">00 · Fonte da energia</span>
+              <h4>Usina Maurício</h4>
+              <p>Das águas para a região: aqui começa a corrente que conectou cidades da Zona da Mata em uma mesma rede.</p>
+            </div>
+            <div class="network-detail-side">
+              <div class="network-detail-metric"><span>Potência inicial</span><strong>800 kW</strong></div>
+              <div class="network-controls" role="group" aria-label="Navegar pelos pontos da rede">
+                <button class="round-button network-prev" type="button" aria-label="Ponto anterior">←</button>
+                <span><b>1</b> / 5</span>
+                <button class="round-button network-next" type="button" aria-label="Próximo ponto">→</button>
+              </div>
+            </div>
+          </div>
+        </figure>
       </section>
     </section>
 
