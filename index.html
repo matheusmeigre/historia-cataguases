@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=08a1a99">
+  <script src="script.js?v=08a1a99" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
@@ -104,8 +104,67 @@
           <p><strong>04</strong> lâmpadas de arco voltaico de 600 velas</p>
         </div>
         <button class="switch" type="button" aria-pressed="false"><span></span><strong>Acender Cataguases</strong></button>
+        <aside class="light-route" aria-labelledby="light-route-title">
+          <div class="route-heading">
+            <strong id="light-route-title">Rota Luz de Minas</strong>
+            <span class="route-state">Acenda a cidade para ativar a rota</span>
+          </div>
+          <div class="route-track">
+            <span class="route-energy" aria-hidden="true"></span>
+            <span class="route-stop route-origin"><i aria-hidden="true"></i><b>Cataguases</b></span>
+            <a class="route-stop route-step-one" href="https://www.google.com/maps/dir/?api=1&amp;origin=Cataguases%2C%20MG&amp;destination=Piacatuba%2C%20Leopoldina%20MG&amp;waypoints=Leopoldina%2C%20MG" target="_blank" rel="noopener"><i aria-hidden="true"></i><b>Leopoldina</b><span>Piacatuba · distrito</span><small>Traçar rota ↗</small></a>
+            <a class="route-stop route-step-two" href="https://www.google.com/maps/dir/?api=1&amp;origin=Cataguases%2C%20MG&amp;destination=Itamarati%20de%20Minas%2C%20MG&amp;waypoints=Leopoldina%2C%20MG%7CPiacatuba%2C%20Leopoldina%20MG" target="_blank" rel="noopener"><i aria-hidden="true"></i><b>Itamarati de Minas</b><small>Traçar rota ↗</small></a>
+          </div>
+        </aside>
         <p class="scene-status" role="status" aria-live="polite">A cidade aguarda a chegada da luz.</p>
       </div>
+
+      <section class="route-guide" data-route-guide aria-labelledby="route-guide-title" aria-hidden="true" inert>
+        <div class="route-guide-inner">
+          <div class="route-summary">
+            <div class="route-summary-copy">
+              <p class="eyebrow light-text">A luz vira caminho</p>
+              <h3 id="route-guide-title">Três territórios.<br><em>Uma história conectada.</em></h3>
+              <p>Uma travessia entre arte, memória, paisagem e natureza pela Zona da Mata Mineira.</p>
+              <a class="route-main-link" href="https://www.google.com/maps/dir/?api=1&amp;origin=Cataguases%2C%20MG&amp;destination=Itamarati%20de%20Minas%2C%20MG&amp;waypoints=Leopoldina%2C%20MG%7CPiacatuba%2C%20Leopoldina%20MG" target="_blank" rel="noopener">Traçar roteiro completo <span aria-hidden="true">↗</span></a>
+            </div>
+            <dl class="route-facts">
+              <div><dt>Extensão</dt><dd>~50 km</dd></div>
+              <div><dt>De carro</dt><dd>~2 horas</dd></div>
+              <div><dt>Imersão</dt><dd>1–2 dias</dd></div>
+            </dl>
+          </div>
+
+          <div class="route-destinations">
+            <article class="destination destination-cataguases">
+              <span class="destination-index">01 · Partida</span>
+              <p class="destination-theme">Cultura e modernismo</p>
+              <h4>Cataguases</h4>
+              <p>O ponto onde eletrificação, cinema, literatura e arquitetura moderna transformaram uma cidade do interior em referência nacional.</p>
+              <ul><li>Memorial Humberto Mauro</li><li>Acervo modernista</li><li>Polo Audiovisual</li></ul>
+              <a href="#patrimonio">Explorar o patrimônio <span aria-hidden="true">↓</span></a>
+            </article>
+            <article class="destination destination-leopoldina">
+              <span class="destination-index">02 · Encontro</span>
+              <p class="destination-theme">Patrimônio e memória</p>
+              <h4>Leopoldina <small>com Piacatuba</small></h4>
+              <p>A Princesa Mineira integra seu distrito de Piacatuba ao roteiro e aproxima patrimônio religioso, memória e paisagem rural.</p>
+              <ul><li>Catedral de São Sebastião</li><li>Casa da Memória</li><li>Distrito de Piacatuba</li></ul>
+              <a href="https://www.google.com/maps/dir/?api=1&amp;origin=Cataguases%2C%20MG&amp;destination=Piacatuba%2C%20Leopoldina%20MG&amp;waypoints=Leopoldina%2C%20MG" target="_blank" rel="noopener">Traçar este trecho <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="destination destination-itamarati">
+              <span class="destination-index">03 · Natureza</span>
+              <p class="destination-theme">Ecologia e aventura</p>
+              <h4>Itamarati de Minas</h4>
+              <p>A RPPN Usina Maurício protege 303,75 hectares de Mata Atlântica e convida a uma experiência de trilhas e observação de aves.</p>
+              <ul><li>RPPN Usina Maurício</li><li>Trilhas ecológicas</li><li>Observação de aves</li></ul>
+              <a href="https://www.google.com/maps/dir/?api=1&amp;origin=Piacatuba%2C%20Leopoldina%20MG&amp;destination=Itamarati%20de%20Minas%2C%20MG" target="_blank" rel="noopener">Traçar este trecho <span aria-hidden="true">↗</span></a>
+            </article>
+          </div>
+
+          <p class="route-source">Informações da rota: <a href="https://www.panrotas.com.br/mercado/destinos/2025/03/energisa-lanca-rota-caminhos-da-zona-da-mata-para-fomentar-turismo-de-minas-gerais_215059.html" target="_blank" rel="noopener">Rota Caminhos da Zona da Mata, 2025 ↗</a></p>
+        </div>
+      </section>
 
       <div class="section timeline-section">
         <div class="timeline-heading reveal">

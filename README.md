@@ -33,6 +33,7 @@ e duradouro de fornecimento de energia para mais de um município.
 
 - Linha do tempo histórica navegável por mouse, toque e teclado.
 - Cena interativa sobre a chegada da eletricidade em 1908.
+- Rota Luz de Minas animada, com trajetos diretos para os destinos parceiros.
 - Visualização da expansão regional da rede elétrica.
 - Abas sobre literatura, cinema e arquitetura.
 - Galeria de marcos arquitetônicos com detalhes em modais.
@@ -105,9 +106,6 @@ Entre as referências centrais estão:
 - [IPHAN: Conselho Consultivo do Patrimônio Cultural][source-iphan]
 - [Vitruvius: Patrimônio modernista em Cataguases][source-vitruvius]
 - [Biblioteca Brasiliana Guita e José Mindlin: Revista Verde][source-verde]
-
-Consulte a seção de fontes do website para acessar referências públicas e as
-incertezas documentais identificadas durante a pesquisa.
 
 ## Imagens
 
